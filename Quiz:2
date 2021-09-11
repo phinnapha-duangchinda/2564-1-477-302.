@@ -1,1 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <body bgcolor="e6e6fa"</body>
+  <body>
+    <div class="สวนตาแซม">
+      <div class="Content">
+          <p><img src="S__2318338.jpg" width="1330" height="500"alt="image4"> </p>
+        </div>
+      <h1>สวนตาแซม</h1>
+                <p class="hader_text">สวนเกษตรอินทรีย์</p>
+                <p class="mid_text">ที่ตั้ง 27 ม.3 ต.แม่ขรี อ.ตะโหมด จ.พัทลุง</p>
+                <p class="bottom_text">จำหน่ายผลผลิตทางการเกษตรปลอดสารพิษ</p>
+        </div>
+        <div class="portfolil">
+          <p>แวะมาชิม มาชมกันได้</p>
+        <div class="content-body">
+          <div class="S__2318338.jpg">
+            <img src="S__2326535.jpg" width="300"height="300">
+            <img src="S__2326534.jpg" width="300"height="300">
+            <img src="S__2326532.jpg" width="300"height="300">
+            <img src="S__2326536.jpg" width="300"height="300">
+            <img src="S__2326540.jpg" width="200"height="200">
+            <img src="S__2326539.jpg" width="200"height="200">
+            <img src="S__2326538.jpg" width="200"height="200">
+            <img src="S__2326543.jpg" width="200"height="200">
+            <img src="S__2326544.jpg" width="200"height="200">
+            <img src="S__2326546.jpg" width="200"height="200">
+          </div>
+        </div>
 
+        <div class="bottom-content">
+          <div class="bottom-content-text">
+            <h1>ผลิตผลทางการเกษตร</h1>
+              <div class="card">
+                  <div class="image">
+                      <img
+                          src="S__2326530.jpg"width="100"height="100"alt/>
+                  </div>
+                  <div class="des-wrapper">
+                      <div class="name">
+                          แก้วมังกรแดงไต้หวัน
+                      </div>
+                      <div class="price">
+                          ราคา:50 บาท
+                      </div>
+                      <div class="submit">
+                          <button class="add-order" onclick="addOrder('แก้วมังกรแดงไต้หวัน)">
+                              ซื้อเลย!
+                          </button>
+                      </div>
+                  </div>
+              </div>
+      
+              <p id="cart"></p>
+        </div>
+
+        <div class="footer">
+          <p>นางสาวพิณนภา ดวงจินดา|6210513045|สาชาระบบสารสนเทศทางธุรกิจ</p>
+        </div>
+      </div>
+  </body>
+</html>
