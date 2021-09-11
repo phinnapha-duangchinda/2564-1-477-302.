@@ -53,7 +53,18 @@
       
               <p id="cart"></p>
         </div>
+<p id="demo">ค้นหาตำแหน่งของคุณ</p>
+<button onclick="getLocation()">คลิก</button>
+<script>
 
+var x=document.getElementById("demo");
+
+function getLocation()
+  {  if (navigator.geolocation)    {    navigator.geolocation.getCurrentPosition(showPosition);   }
+  else{x.innerHTML="Geolocation is not supported by this browser.";}  }function showPosition(position)
+  {  x.innerHTML="Latitude: " + position.coords.latitude +   "<br>Longitude: " + position.coords.longitude;      }
+
+</script>
         <div class="footer">
           <p>นางสาวพิณนภา ดวงจินดา|6210513045|สาชาระบบสารสนเทศทางธุรกิจ</p>
         </div>
