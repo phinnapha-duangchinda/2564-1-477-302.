@@ -2,69 +2,145 @@
 <html lang="en" dir="ltr">
   <body bgcolor="e6e6fa"</body>
   <body>
-    <div class="สวนตาแซม">
       <div class="Content">
-          <p><img src="S__2318338.jpg" width="1330" height="500"alt="image4"> </p>
+          <p><img src="ตำแหน่ง.png" width="1330" height="500"alt="image4"> </p>
         </div>
-      <h1>สวนตาแซม</h1>
-                <p class="hader_text">สวนเกษตรอินทรีย์</p>
-                <p class="mid_text">ที่ตั้ง 27 ม.3 ต.แม่ขรี อ.ตะโหมด จ.พัทลุง</p>
-                <p class="bottom_text">จำหน่ายผลผลิตทางการเกษตรปลอดสารพิษ</p>
-        </div>
-        <div class="portfolil">
-          <p>แวะมาชิม มาชมกันได้</p>
-        <div class="content-body">
-          <div class="S__2318338.jpg">
-            <img src="S__2326535.jpg" width="300"height="300">
-            <img src="S__2326534.jpg" width="300"height="300">
-            <img src="S__2326532.jpg" width="300"height="300">
-            <img src="S__2326536.jpg" width="300"height="300">
-            <img src="S__2326540.jpg" width="200"height="200">
-            <img src="S__2326539.jpg" width="200"height="200">
-            <img src="S__2326538.jpg" width="200"height="200">
-            <img src="S__2326543.jpg" width="200"height="200">
-            <img src="S__2326544.jpg" width="200"height="200">
-            <img src="S__2326546.jpg" width="200"height="200">
-          </div>
-        </div>
-
-        <div class="bottom-content">
-          <div class="bottom-content-text">
-            <h1>ผลิตผลทางการเกษตร</h1>
-              <div class="card">
-                  <div class="image">
-                      <img
-                          src="S__2326530.jpg"width="100"height="100"alt/>
-                  </div>
-                  <div class="des-wrapper">
-                      <div class="name">
-                          แก้วมังกรแดงไต้หวัน
-                      </div>
-                      <div class="price">
-                          ราคา:50 บาท
-                      </div>
-                      <div class="submit">
-                          <button class="add-order" onclick="addOrder('แก้วมังกรแดงไต้หวัน)">
-                              ซื้อเลย!
-                          </button>
-                      </div>
-                  </div>
-              </div>
-      
-              <p id="cart"></p>
-        </div>
-<p id="demo">ค้นหาตำแหน่งของคุณ</p>
-<button onclick="getLocation()">คลิก</button>
-<script>
-
-var x=document.getElementById("demo");
-
-function getLocation()
-  {  if (navigator.geolocation)    {    navigator.geolocation.getCurrentPosition(showPosition);   }
-  else{x.innerHTML="Geolocation is not supported by this browser.";}  }function showPosition(position)
-  {  x.innerHTML="Latitude: " + position.coords.latitude +   "<br>Longitude: " + position.coords.longitude;      }
-
-</script>
+      <h2>ตำแหน่งปัจจุบันของคุณ</h2>
+        <p id="demo"><h3>ตำแหน่งของคุณแบบข้อมูล</h3></p>
+        <button onclick="getLocation()">ยืนยัน</button>
+        <script>
+        var x=document.getElementById("demo");
+        function getLocation()
+          {  if (navigator.geolocation)    {    navigator.geolocation.getCurrentPosition(showPosition);   }
+          else{x.innerHTML="Geolocation is not supported by this browser.";}  }function showPosition(position)
+          {  x.innerHTML="Latitude: " + position.coords.latitude +   "<br>Longitude: " + position.coords.longitude;      }
+          head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz-2</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+  <style>
+    body {
+      color: rgb(0, 0, 0);
+      font-family: 'Prompt', sans-serif;
+    }
+  </style>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Prompt&display=swap" rel="stylesheet">
+  <!-- เปิด-ปิด dialog -->
+  <script>
+    function show_dialog() {
+      var showdialog = document.getElementById("myDialog");
+      showdialog.showModal();
+    }
+    function close_dialog() {
+      var closedialog = document.getElementById("myDialog");
+      closedialog.close()
+    }
+  </script>
+  <!-- แสดงใน dialog -->
+  <script>
+    function showname() {
+      let x = document.getElementById("name").value
+      document.getElementById("showname").innerHTML = "สวัสดีคุณ " + x + "<br>" + " ตำแหน่งปัจจุบันของคุณ"
+    }
+  </script>
+  <!-- เช็คว่าผู้ใช้ใส่ชื่อมาแล้วหรือไม่ -->
+  <script>
+    function checkname() {
+      let x = document.getElementById("name").value
+      if (x == "") {
+        alert("กรุณากรอกชื่อให้ครบถ้วน!")
+      } else {
+        showname()
+        getLocation()
+        clickCounter()
+      }
+    }
+  </script>
+  <!-- map -->
+  <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAoKoNVKdXRrp8YDgara5W1m2nfTU1dG5g&callback=initMap"
+    type="text/javascript"></script>
+  <script>
+    var x = document.getElementById("showname");
+    function getLocation() {
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition, showError);
+      } else {
+        x.innerHTML = "บราวเซอร์ของคุณไม่ลองรับ";
+      }
+    }
+    function showPosition(position) {
+      lat = position.coords.latitude;
+      lon = position.coords.longitude;
+      latlon = new google.maps.LatLng(lat, lon)
+      mapholder = document.getElementById('mapholder')
+      mapholder.style.height = '700px';
+      mapholder.style.width = '700px';
+      var myOptions = {
+        center: latlon,
+        zoom: 18,
+        mapTypeId: google.maps.MapTypeId.ROADMAP,
+        mapTypeControl: false,
+        navigationControlOptions: { style: google.maps.NavigationControlStyle.SMALL }
+      }
+      var map = new google.maps.Map(document.getElementById("mapholder"), myOptions);
+      var marker = new google.maps.Marker({ position: latlon, map: map, title: "You are here!" });
+    }
+    function showError(error) {
+      switch (error.code) {
+        case error.PERMISSION_DENIED:
+          x.innerHTML = "User denied the request for Geolocation."
+          break;
+        case error.POSITION_UNAVAILABLE:
+          x.innerHTML = "Location information is unavailable."
+          break;
+        case error.TIMEOUT:
+          x.innerHTML = "The request to get user location timed out."
+          break;
+        case error.UNKNOWN_ERROR:
+          x.innerHTML = "An unknown error occurred."
+          break;
+      }
+    }
+  </script>
+  <!-- นับจำนวนครั้งที่ผู้ใช้กดแสดงแผนที่ -->
+  <script>
+    function clickCounter() {
+      if (typeof (Storage) !== "undefined") {
+        if (localStorage.clickcount) {
+          localStorage.clickcount = Number(localStorage.clickcount) + 1;
+        } else {
+          localStorage.clickcount = 1;
+        }
+        document.getElementById("counter").innerHTML = "คุณกดดูตำแหน่งของคุณไปแล้ว " + localStorage.clickcount + " ครั้ง";
+      } else {
+        document.getElementById("counter").innerHTML = "บราวเซอร์ของคุณไม่ลองรับ web storage...";
+      }
+    }
+    function del() {
+      localStorage.removeItem("clickcount");
+      document.getElementById("counter").innerHTML = "คุณกดดูตำแหน่งของคุณไปแล้ว " + "0" + " ครั้ง";
+    }
+  </script>
+</head>
+<body>
+  <!-- ส่วนเนื้อหา -->
+  <div align=left>
+    <h3>ค้นหาตำแหน่งปัจจุบันแบบ แผนที่</h3>
+    <label for="name">กรุณากรอกชื่อ: </label>
+    <input type="text" id="name"><br><br>
+    <button type="button" class="btn btn-dark" onclick="checkname()">ยืนยัน</button>
+    <button type="button" class="btn btn-dark"
+      onclick="del(),document.location.reload(true)">ลบข้อมูล</button><br><br>
+    <p id="showname"></p>
+    <div id="mapholder"></div><br>
+    <div id="counter"></div>
+  </div>
         <div class="footer">
           <p>นางสาวพิณนภา ดวงจินดา|6210513045|สาชาระบบสารสนเทศทางธุรกิจ</p>
         </div>
